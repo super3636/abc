@@ -1,0 +1,10 @@
+E:\baitap\2020\LTM__LabCuoi2\client\client\bin\Debug\client.exe.config
+E:\baitap\2020\LTM__LabCuoi2\client\client\bin\Debug\client.exe
+E:\baitap\2020\LTM__LabCuoi2\client\client\bin\Debug\client.pdb
+E:\baitap\2020\LTM__LabCuoi2\client\client\obj\Debug\client.Form1.resources
+E:\baitap\2020\LTM__LabCuoi2\client\client\obj\Debug\client.Form2.resources
+E:\baitap\2020\LTM__LabCuoi2\client\client\obj\Debug\client.Properties.Resources.resources
+E:\baitap\2020\LTM__LabCuoi2\client\client\obj\Debug\client.csproj.GenerateResource.Cache
+E:\baitap\2020\LTM__LabCuoi2\client\client\obj\Debug\client.exe
+E:\baitap\2020\LTM__LabCuoi2\client\client\obj\Debug\client.pdb
+E:\baitap\2020\LTM__LabCuoi2\client\client\obj\Debug\client.csprojResolveAssemblyReference.cache

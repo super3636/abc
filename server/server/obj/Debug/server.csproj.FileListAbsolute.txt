@@ -1,0 +1,9 @@
+E:\baitap\2020\LTM__LabCuoi2\server\server\bin\Debug\server.exe.config
+E:\baitap\2020\LTM__LabCuoi2\server\server\bin\Debug\server.exe
+E:\baitap\2020\LTM__LabCuoi2\server\server\bin\Debug\server.pdb
+E:\baitap\2020\LTM__LabCuoi2\server\server\obj\Debug\server.csprojResolveAssemblyReference.cache
+E:\baitap\2020\LTM__LabCuoi2\server\server\obj\Debug\server.Form1.resources
+E:\baitap\2020\LTM__LabCuoi2\server\server\obj\Debug\server.Properties.Resources.resources
+E:\baitap\2020\LTM__LabCuoi2\server\server\obj\Debug\server.csproj.GenerateResource.Cache
+E:\baitap\2020\LTM__LabCuoi2\server\server\obj\Debug\server.exe
+E:\baitap\2020\LTM__LabCuoi2\server\server\obj\Debug\server.pdb
