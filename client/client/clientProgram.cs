@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace client
 {
@@ -40,9 +41,10 @@ namespace client
             }
             catch
             {
-                SetDataFunction("Kết nối thất bại");
+                MessageBox.Show("Server chưa mở kết nối");
                 return;
             }
+     
         }
         public void SendName(string name)
         {
@@ -84,9 +86,9 @@ namespace client
                 try
                 {
                   
-                    buff = new byte[1024];
-                    s.Receive(buff, 0, buff.Length, SocketFlags.None);
-                    string message2 = Encoding.UTF8.GetString(buff);
+                    byte[] buff2 = new byte[1024];
+                    s.Receive(buff2, 0, buff2.Length, SocketFlags.None);
+                    string message2 = Encoding.UTF8.GetString(buff2);
                     SetDataFunction(message2);
                 }
                 catch
@@ -103,8 +105,11 @@ namespace client
         }
         public void SendMessage(string message)
         {
+           
             buff = new byte[1024];
             buff = Encoding.UTF8.GetBytes(message);
+            SetDataFunction(name);
+            SetDataFunction(message);
             clientSocket.Send(buff);
         }
 

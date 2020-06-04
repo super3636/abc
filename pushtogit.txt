@@ -1,0 +1,7 @@
+cd directory
+git init
+git add .
+git commit -m "testing"
+git remote add github http:\....git
+git remote -v
+git push -f github master

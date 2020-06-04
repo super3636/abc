@@ -99,12 +99,12 @@ namespace server
                             SetDataFunction(outMessage);
                             byte[] buff2 = new byte[1024];
                             buff2 = Encoding.UTF8.GetBytes(outMessage);
-                            try
-                            {
-                                string socketInfo = cl.name + cl.clientSocket.RemoteEndPoint.ToString();
+                            //try
+                            //{
+                                string socketInfo = cl.name + " ("+cl.clientSocket.RemoteEndPoint.ToString()+")";
                                 RemoveSocketFunction(socketInfo);
-                            }
-                            catch { MessageBox.Show("asd"); }
+                            //}
+                            //catch { MessageBox.Show("asd"); }
                             ListClient.Remove(cl);
                             foreach (client cl2 in ListClient.ToList())
                             {
@@ -136,7 +136,7 @@ namespace server
             string name = Encoding.UTF8.GetString(buff, 0, byteReceive);
             client cls = new client(name, s);
             ListClient.Add(cls);
-            SetSocketFunction(cls.name+cls.clientSocket.RemoteEndPoint.ToString());            
+            SetSocketFunction(cls.name+" ("+cls.clientSocket.RemoteEndPoint.ToString()+")");            
             buff = new byte[1024];
             string name2 = name+ " đã vào phòng";
             SetDataFunction(name2);
@@ -149,33 +149,41 @@ namespace server
             //s.BeginReceive(buff, 0, buff.Length, SocketFlags.None, new AsyncCallback(ReceiveCallBack), s);
             while(Loop)
             {
-                //try
-                //{
+                try
+                {
                     byte[] buff3 = new byte[1024];
-                    byteReceive = s.Receive(buff3);
-                    if (byteReceive > 0)
+                    int byteReceive2 = s.Receive(buff3);
+                    if (byteReceive2 > 0)
                     {
-                        string message = Encoding.UTF8.GetString(buff3, 0, byteReceive);
+                        client cl = CheckSocket(s);
+                        byte[] buff4 = new byte[1024];
+                        buff4 = Encoding.ASCII.GetBytes(cl.name + " :");
+                        SetDataFunction(name + " :");
+                        string message = Encoding.UTF8.GetString(buff3, 0, byteReceive2);
                         SetDataFunction(message);
                         foreach (client cl2 in ListClient)
                         {
-                            cl2.clientSocket.Send(buff3);
+                            if (cl2 != cl)
+                            {
+                                cl2.clientSocket.Send(buff4);
+                                cl2.clientSocket.Send(buff3);
+                            }
                         }
                     }
-                //}
-                //catch
-                //{
-                //    foreach (client cl3 in ListClient)
-                //    {
-                //        if (cl3.clientSocket == s)
-                //        {
-                //            ListClient.Remove(cl3);
-                //            break;
-                //        }
-                //    }
-                //    SetDataFunction("Server đóng kết nối");
-                //    s.Close();
-                //}
+                }
+                catch
+                {
+                    foreach (client cl3 in ListClient)
+                    {
+                        if (cl3.clientSocket == s)
+                        {
+                            ListClient.Remove(cl3);
+                            break;
+                        }
+                    }
+                    SetDataFunction("Server đóng kết nối");
+                    s.Close();
+                }
             }
             SetDataFunction("Server đóng kết nôi1");
             foreach(client cl4 in ListClient)
@@ -186,6 +194,18 @@ namespace server
             ListClient.Clear();
             serverSocket.Close();
         }
+        public client CheckSocket(Socket s)
+        {
+            foreach(client cl in ListClient)
+            {
+                if(cl.clientSocket==s)
+                {
+                    return cl;
+                }
+            }
+            return null;
+        }
+
 
         private void ReceiveCallBack(IAsyncResult ar)
         {
