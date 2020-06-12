@@ -8,3 +8,8 @@ E:\baitap\2020\LTM__LabCuoi2\client\client\obj\Debug\client.csproj.GenerateResou
 E:\baitap\2020\LTM__LabCuoi2\client\client\obj\Debug\client.exe
 E:\baitap\2020\LTM__LabCuoi2\client\client\obj\Debug\client.pdb
 E:\baitap\2020\LTM__LabCuoi2\client\client\obj\Debug\client.csprojResolveAssemblyReference.cache
+E:\baitap\2020\LTM__LabCuoi2\client\client\obj\Debug\client.DangKi.resources
+E:\baitap\2020\LTM__LabCuoi2\client\client\bin\Debug\EntityFramework.dll
+E:\baitap\2020\LTM__LabCuoi2\client\client\bin\Debug\EntityFramework.SqlServer.dll
+E:\baitap\2020\LTM__LabCuoi2\client\client\bin\Debug\EntityFramework.xml
+E:\baitap\2020\LTM__LabCuoi2\client\client\bin\Debug\EntityFramework.SqlServer.xml

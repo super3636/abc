@@ -1,0 +1,9 @@
+cd directory
+1.git init
+2.git add .
+3.git commit -m "Do an co so"
+4.git remote add github http:\link...git
+5.git remote -v
+6.git push -f github master - git push -u origin master
+touch test
+

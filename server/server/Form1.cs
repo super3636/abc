@@ -12,6 +12,7 @@ namespace server
     public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
         serverProgram Server = new serverProgram();
+        
         public Form1()
         {
             InitializeComponent();
@@ -35,12 +36,26 @@ namespace server
         private void button2_Click(object sender, EventArgs e)
         {
             Server.Listen();
-           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            serverProgram.Loop = false;
+            Server.Disconect();
         }
+
+        private void cmsClient_MouseClick(object sender, MouseEventArgs e)
+        {
+           //client cl;
+           
+            string clientInfo = listBox2.SelectedItem.ToString();
+            Server.outClient(clientInfo);
+
+        }
+
+        private void listBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            listBox2.SelectedIndex = listBox2.IndexFromPoint(e.X, e.Y);
+        }
+
     }
 }
